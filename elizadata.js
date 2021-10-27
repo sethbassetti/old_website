@@ -1,12 +1,12 @@
 // data for elizabot.js
-// entries prestructured as layed out in Weizenbaum's description 
+// entries prestructured as layed out in Weizenbaum's description
 // [cf: Communications of the ACM, Vol. 9, #1 (January 1966): p 36-45.]
 
 var elizaInitials = [
-"How do you do.  Please tell me your problem.",
+"Hi Anna, ow do you do.  Please tell me your problem.",
 // additions (not original)
-"Please tell me what's been bothering you.",
-"Is something troubling you ?"
+"Hello Anna, please tell me what's been bothering you.",
+"Is something troubling you, Anna?"
 ];
 
 var elizaFinals = [
