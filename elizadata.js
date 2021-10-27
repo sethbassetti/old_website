@@ -3,7 +3,7 @@
 // [cf: Communications of the ACM, Vol. 9, #1 (January 1966): p 36-45.]
 
 var elizaInitials = [
-"Hi Anna, ow do you do.  Please tell me your problem.",
+"Hi Anna, how do you do.  Please tell me your problem.",
 // additions (not original)
 "Hello Anna, please tell me what's been bothering you.",
 "Is something troubling you, Anna?"
