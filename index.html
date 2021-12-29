@@ -1,82 +1,39 @@
-<HTML>
-<HEAD>
-	<TITLE>Eliza (elizabot.js)</TITLE>
-	<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript" SRC="elizabot.js"></SCRIPT>
-	<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript" SRC="elizadata.js"></SCRIPT>
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>Spaghetti Chess</title>
+  <link rel="stylesheet" href="css/chessboard-1.0.0.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+<script src="js/jquery-3.6.0.js"></script>
+<script src="js/a.out.js"></script>
+<script src="js/chessboard-1.0.0.min.js"></script>
+<script src="js/chess.js"></script>
 
-<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
-<!--
+</head>
+<body onload="initBoard()">
 
-var eliza = new ElizaBot();
-var elizaLines = new Array();
+<div id="Game">
+    <div id="board"></div>
 
-var displayCols = 60;
-var displayRows = 20;
+    <div id="ui">
+        <h1> <center>Game Settings</center></h1>
+        <input type="radio" name="colorSelector" id="white" value="white" checked>
+        <label for="white">White</label>
+        <input type="radio" name="colorSelector" id="black" value="black">
+        <label for="black">Black</label>
+    </br>
+        <button id="setStartBtn">Start Position</button>
+        <p></p>
 
-function elizaReset() {
-	eliza.reset();
-	elizaLines.length = 0;
-	elizaStep();
-}
+    </div>
 
-function elizaStep() {
-	var f = document.forms.e_form;
-	var userinput = f.e_input.value;
-	if (eliza.quit) {
-		f.e_input.value = '';
-		if (confirm("This session is over.\nStart over?")) elizaReset();
-		f.e_input.focus();
-		return;
-	}
-	else if (userinput != '') {
-		var usr = 'YOU:   ' + userinput;
-		var rpl ='ELIZA: ' + eliza.transform(userinput);
-		elizaLines.push(usr);
-		elizaLines.push(rpl);
-		// display nicely
-		// (fit to textarea with last line free - reserved for extra line caused by word wrap)
-		var temp  = new Array();
-		var l = 0;
-		for (var i=elizaLines.length-1; i>=0; i--) {
-			l += 1 + Math.floor(elizaLines[i].length/displayCols);
-			if (l >= displayRows) break
-			else temp.push(elizaLines[i]);
-		}
-		elizaLines = temp.reverse();
-		f.e_display.value = elizaLines.join('\n');
-	}
-	else if (elizaLines.length == 0) {
-		// no input and no saved lines -> output initial
-		var initial = 'ELIZA: ' + eliza.getInitial();
-		elizaLines.push(initial);
-		f.e_display.value = initial + '\n';
-	}
-	f.e_input.value = '';
-	f.e_input.focus();
-}
-
-//-->
-</SCRIPT>
-</HEAD>
-
-<BODY TOPMARGIN="0" LEFTMARGIN="0" RIGHTMARGIN="0" BOTTOMMARGIN="0" MARGINHEIGHT="0" MARGINWIDTH="0" STYLE="border:0" onload="window.setTimeout('elizaReset()',100)"><A NAME="top"></A>
-
-<CENTER>
-<P>&nbsp;</P>
-<H3>Eliza</H3>
-<TABLE BORDER="0" CELLSPACING="10" CELLPADDING="0">
-<FORM NAME="e_form" onsubmit="elizaStep();return false">
-<TR><TD COLSPAN="2"><TEXTAREA NAME="e_display" COLS="60" ROWS="20"></TEXTAREA></TD></TR>
-<TR VALIGN="middle">
-	<TD><INPUT TYPE="text" NAME="e_input" SIZE="50"></TD>
-	<TD ALIGN="right"><INPUT TYPE="submit" VALUE="&nbsp;Talk&nbsp;"> <INPUT TYPE="reset" VALUE="Reset" onClick="window.setTimeout('elizaReset()',100)"></TD>
-</TR>
-</FORM>
-</TABLE>
-</CENTER>
-<img src="anna_funny_cropped.jpg" class="funny">
+</div>
 
 
 
-</BODY>
-</HTML>
+
+</body>
+</html>
