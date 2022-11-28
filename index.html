@@ -1,57 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>Spaghetti Chess</title>
-  <link rel="stylesheet" href="css/chessboard-1.0.0.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="img/favicon-32x32.png">
-  
 
+    <!-- Head. Contains title and other web-page specific info-->
+    <head>
+        <title> Seth Bassetti</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
 
-</head>
-<body onload="initBoard()">
+    <!-- Main content of the webpage-->
+    <body>
 
-<div id="Game">
-
-
-        <div id="board"></div>
-
-
-    <div id="ui">
-        <h1 class="ui-title"> <center>Spaghetti Chess</center></h1>
-        <input type="radio" name="colorSelector" id="white" value="white" checked>
-        <label for="white">White</label>
-        <input type="radio" name="colorSelector" id="black" value="black">
-        <label for="black">Black</label>
-
+        <!-- Side navigation -->
+        <div class="sidenav">
+            <h1 class='nav-header'>Seth Bassetti</h1>
+            <a href="#index.html">Home</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
         
-        
-        <div class="slidecontainer depth-slider">
-            <h1> Depth Searched: </h1> 
-            <h2 id="depth-text">4</h2>
-            <input type="range" min="1" max="4" value="1" class="slider" id="myRange">
+        <!-- Page content -->
+        <div class="main">
+            <p> Hello</p>
         </div>
 
-    <!-- Start button-->
-        <button id="setStartBtn" class="start-btn" onclick="startGame()">Start Position</button>
-        <br>
-        <p></p>
-
-    </div>
-
-</div>
-
-
-
-
-<script src="js/jquery-3.6.0.js"></script>
-<script src="a.out.js"></script>
-<script src="js/chess.js"></script>
-<script src="js/chessboard-1.0.0.js"></script>
-<script src="js/chess_main.js"></script>
-</body>
-
+    </body>
 
 </html>
