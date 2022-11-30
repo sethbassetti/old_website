@@ -14,7 +14,14 @@
   flex: 1 1 0;
   max-width: 300px;
   padding: 2rem 1rem;
-  background-color: #2e3047;
+  background-color: #FFEDDF;
+}
+
+.sidebar p {
+  color: black;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  text-align: center;
 }
 
 .sidebar img{
@@ -27,7 +34,7 @@
 
 .sidebar h3{
   text-align: center;
-  color: white;
+  color: black;
   font-size: 2rem;
   margin-bottom: 0.5em;
 }
@@ -37,36 +44,41 @@
 }
 
 .sidebar .menu .menu-item {
+  text-align: center;
   display: block;
   padding: 1em;
-  color: #FFF;
+  color: black;
   text-decoration: none;
   transition: 0.2s linear;
 }
 
 .sidebar .menu .menu-item:hover,
 .sidebar .menu .menu-item.is-active {
-  color: #3bba9c;
-  border-right: 5px solid #3bba9c;
+  color: #99C2A2;
+  border-right: 5px solid #99C2A2;
 }
 
 .content {
   flex: 1 1 0;
   padding: 2rem;
-  background: linear-gradient(rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.20)), url(../imgs/ice_climbing_shot.jpg);
+}
+
+.home-pg {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.0)), url(../imgs/ice_climbing_shot.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
 
-.content h1 {
+.home-pg h1 {
   color: white;
-  font-size: 2.5rem;
+  font-size: 4rem;
   margin-top: 3rem;
 }
 
-.content p {
+.home-pg p {
   color: white;
+  font-size: 1.25rem;
 }
 
 .menu-toggle {
@@ -149,7 +161,7 @@
 }
 
 .social-links {
-  margin-top: 2rem;
+  margin-top: 8rem;
   display: flex;
   justify-content: center;
   flex-direction:row;
@@ -158,8 +170,33 @@
 .social-button {
   margin-right: 5px;
   margin-left: 5px;
-  background-color: #1174bf;
   padding: 0.25rem 0.25rem 0.25rem 0.25rem;
   text-align: center;
+  color: #99C2A2;
+}
+
+.social-button:hover {
+  background-color: orange;
+}
+
+.about-page{
+  background-color: #E98372;
+  flex: 1 1 0;
+  transform: translateX(100%);
+}
+
+.about-page h1{
   color: white;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+
+.about-page p {
+  color: white;
+  text-align: center;
+}
+
+.move-left {
+  transform: translateX(-100%);
 }

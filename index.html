@@ -30,40 +30,108 @@
                 <h3> Seth Bassetti</h3>
 
                 <nav class="menu">
-                    <a href="./index.html" class="menu-item is-active">Home</a>
-                    <a href="./about.html" class="menu-item">About</a>
+                    <a href="#home" id="homeButton" class="menu-item">Home</a>
+                    <a href="#about" id="aboutButton" class="menu-item">About</a>
                     <a href="#" class="menu-item">Portfolio</a>
                     <a href="#" class="menu-item">Contact</a>
                 </nav>
 
                 <ul class="social-links">
-                    <a href="https://www.instagram.com/seth_spaghetti/" class="social-button">
-                        <i class="fa-brands fa-instagram"></i>
+                    <a href="https://www.linkedin.com/in/sethbassetti/" class="social-button">
+                        <i class="fa-brands fa-2xl fa-linkedin"></i>
                     </a>
 
                     <a href="https://github.com/sethbassetti" class="social-button">
-                        <i class="fa-brands fa-github"></i>
+                        <i class="fa-brands fa-2xl fa-github"></i>
                     </a>
 
-                    <a href="https://www.linkedin.com/in/sethbassetti/" class="social-button">
-                        <i class="fa-brands fa-linkedin"></i>
+                    <a href="https://www.instagram.com/seth_spaghetti/" class="social-button">
+                        <i class="fa-brands fa-2xl fa-instagram"></i>
                     </a>
 
                 </ul>
+
+                <p class="copyright">Seth Bassetti © 2022</p> 
             </aside>
 
-            <main class="content">
+            <main id="home" class="content home-pg">
                 <h1>Seth Bassetti</h1> 
                 <p>>Machine Learning Engineer</p>
                 <p>>BS. Geology. MS. Computer Science</p>
                 <p>>e-mail: sethbassetti@gmail.com</p>
             </main>
+
+            <main id="about" class="content about-page">
+                <h1> About me!</h1>
+                <p>Hi! I'm a Geology Graduate from Montana State University and 
+                    currently finishing my Master's Degree in Computer Science
+                    from Western Washington University.
+                </p> 
+            </main>
+
+
         </div>
 
 
     <script>
+        // Define the menu toggle (for mobile displays) and the sidebar
         const menu_toggle = document.querySelector('.menu-toggle');
         const sidebar = document.querySelector('.sidebar')
+        
+        // Get the current hash location from the window
+        let currentHash = window.location.hash
+        
+        // Define two dictionaries with hash - element mappings to change features later
+        let contentDict = {
+            '#home' : document.getElementById('home'),
+            '#about' : document.getElementById('about')
+        }
+
+        let buttonDict = {
+            '#home' : document.getElementById('homeButton'),
+            '#about' : document.getElementById('aboutButton')
+        }
+        
+        // Initially hide all content on the page
+        for (let key in contentDict)
+        {
+            let elem = contentDict[key];
+            elem.style.display = 'none';
+        }
+        
+        // If there is no hash location, set it to be pointed towards #home
+        if (currentHash == ''){
+            currentHash = '#home';
+        }
+
+        // Enable the current Hash's display
+        contentDict[currentHash].style.display = 'block';
+
+        // Activate the button associated with the current hash
+        buttonDict[currentHash].classList.add('is-active')
+        
+        // This function will change the main content of the screen when the hash location changes
+        window.onhashchange = (event) => {
+
+            console.log(contentDict[currentHash])
+            // Set the current hash's display to none
+            contentDict[currentHash].style.display = 'none';
+
+
+            // Disable the border around the current hash's button
+            buttonDict[currentHash].classList.remove('is-active');
+
+            // Update the current hash
+            currentHash = window.location.hash;
+
+            console.log(contentDict[currentHash]);
+
+            // Turn on display for new hash content
+            contentDict[currentHash].style.display = 'block';
+            
+            // Add border around active button
+            buttonDict[currentHash].classList.add('is-active')
+        }
 
         menu_toggle.addEventListener('click', () => {
             menu_toggle.classList.toggle('is-active');
