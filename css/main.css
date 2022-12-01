@@ -176,7 +176,6 @@
 }
 
 .social-button {
-  border-radius: 0.25rem;
   margin-right: 5px;
   margin-left: 5px;
   padding: 0.25rem 0.25rem 0.25rem 0.25rem;
@@ -185,7 +184,7 @@
 }
 
 .social-button:hover {
-  background-color: #6d96a1;
+  border-bottom: 2px solid #17618C;
 }
 
 .about-page{
@@ -222,9 +221,8 @@
 }
 
 .contact-pg {
-  font-family: 'Poppins', sans-serif;
-  background-color: #4158D0;
-  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  font-family: 'Noto Serif JP', serif;
+  background-color: #17618C;
   box-sizing: border-box;
   position: relative;
   min-height: 100vh;
@@ -296,13 +294,13 @@
 
 .contact-text h3 {
   font-weight: 500;
-  color: #00bcd4;
+  color: #99C2A2  ;
 }
 
 .contactForm {
   width: 40%;
   padding: 40px;
-  background: #fff;
+  background: #EBEBF0;
 }
 
 .contactForm h1 {
@@ -328,6 +326,7 @@
   border-bottom: 2px solid #333;
   outline: none;
   resize: none;
+  background-color: #EBEBF0;
 }
 
 .contactForm .inputBox span {
@@ -353,8 +352,9 @@
 
 .contactForm .inputBox input[type="submit"]
 {
+  font-family: 'Noto Serif JP', serif;
   width: 100px;
-  background-color: #00bcd4;
+  background-color: #99C2A2;
   color:#fff;
   border:none;
   cursor: pointer;
@@ -384,4 +384,26 @@
   {
     width: 100%;
   }
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+a { color: inherit; } 
+
+.linkedin-link {
+  border-bottom: 1px solid white;
 }
