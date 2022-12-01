@@ -33,8 +33,11 @@
                     <a href="#home" id="homeButton" class="menu-item">Home</a>
                     <a href="#about" id="aboutButton" class="menu-item">About</a>
                     <a href="#" class="menu-item">Portfolio</a>
-                    <a href="#" class="menu-item">Contact</a>
+                    <a href="#contact" id="contactButton" class="menu-item">Contact</a>
                 </nav>
+
+                
+                
 
                 <ul class="social-links">
                     <a href="https://www.linkedin.com/in/sethbassetti/" class="social-button">
@@ -51,22 +54,104 @@
 
                 </ul>
 
+                <div class="location"><i class="fa-solid fa-location-dot"></i> Bellingham, WA</div>
+
                 <p class="copyright">Seth Bassetti © 2022</p> 
             </aside>
 
+            <!-- Landing page section with picture and some text-->
             <main id="home" class="content home-pg">
                 <h1>Seth Bassetti</h1> 
-                <p>>Machine Learning Engineer</p>
-                <p>>BS. Geology. MS. Computer Science</p>
-                <p>>e-mail: sethbassetti@gmail.com</p>
+                <p>> Machine Learning Engineer</p>
+                <p>> Research Scientist</p>
+                <p>> Computer Science Educator</p>
+                <p>> AI Enthusiast</p>
+                
+            </main>
+            
+            <!--About page section-->
+            <main id="about" class="content about-page">
+
+                <!--Story Text-->
+                <div class="about-text">
+                    <h1> My Story</h1>
+                        <p>Hi! I'm Seth Bassetti, a machine learning engineer and researcher from Cle Elum, WA. Currently I do graduate-level research
+                            at <a href="https://fw.cs.wwu.edu/~hutchib2/hutchresearch.html">Western Washington University</a>. Before that 
+                        </p> 
+                    
+                
+                </div>
+
+                <!--Story Image-->
+                <div class="about-img">
+                    <img src="imgs/climbing_headshot.jpg">
+                </div>
             </main>
 
-            <main id="about" class="content about-page">
-                <h1> About me!</h1>
-                <p>Hi! I'm a Geology Graduate from Montana State University and 
-                    currently finishing my Master's Degree in Computer Science
-                    from Western Washington University.
-                </p> 
+            <!-- Contact Page Section-->
+            <main id="contact" class="content contact-pg">
+                <div class="contact-content">
+                    <h1>Get in Touch</h1>
+                    <p>
+                        Let's talk about everything!
+                    </p>
+                </div>
+                <div class="container">
+                    <div class="contactInfo">
+                        <div class="contact-box">
+
+                            <!--Phone Icon-->
+                            <div class="contact-icon"><i class="fa-solid fa-phone"></i></i> </div>
+                            <div class="contact-text">
+                                <h3>Phone</h3>
+                                <p>(509) 964-3752</p>
+
+                            </div>
+
+                        </div>
+                        
+                        <!--Email Box-->
+                        <div class="contact-box">
+
+                            <div class="contact-icon"> <i class="fa-regular fa-envelope"></i> </div>
+                            <div class="contact-text">
+                                <h3>Email</h3>
+                                <p>sethbassetti@gmail.com</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="contactForm">
+                       <form action="https://formsubmit.co/ee7f89efd643e8b8f7918adc780040e1" method="POST">
+                        <input type="hidden" name="_next" value="http://localhost:5500/#contact">
+                            <h2>Send Message</h2>
+
+                            <div class="inputBox">
+                                <input type="text" name="name" required="required">
+                                <span>Full Name</span>
+                            </div>
+
+                            <div class="inputBox">
+                                <input type="email" name="email" required="required">
+                                <span>Email</span>
+                            </div>
+
+                            <div class="inputBox">
+                                <textarea name="message" required="required"></textarea>
+                                <span>Type your message...</span>
+                            </div>
+
+                            <div class="inputBox">
+                                <input type="submit" name="" value="send">
+                            </div>
+
+                            
+                        </form>
+                    </div>
+                </div>
+                
             </main>
 
 
@@ -78,18 +163,27 @@
         const menu_toggle = document.querySelector('.menu-toggle');
         const sidebar = document.querySelector('.sidebar')
         
+        
         // Get the current hash location from the window
         let currentHash = window.location.hash
         
         // Define two dictionaries with hash - element mappings to change features later
         let contentDict = {
             '#home' : document.getElementById('home'),
-            '#about' : document.getElementById('about')
+            '#about' : document.getElementById('about'),
+            '#contact' : document.getElementById('contact')
+        }
+
+        let displayDict = {
+            '#home' : 'block',
+            '#about' : 'flex',
+            '#contact' : 'flex',
         }
 
         let buttonDict = {
             '#home' : document.getElementById('homeButton'),
-            '#about' : document.getElementById('aboutButton')
+            '#about' : document.getElementById('aboutButton'),
+            '#contact' : document.getElementById('contactButton'),
         }
         
         // Initially hide all content on the page
@@ -105,10 +199,12 @@
         }
 
         // Enable the current Hash's display
-        contentDict[currentHash].style.display = 'block';
+        contentDict[currentHash].style.display = displayDict[currentHash];
 
         // Activate the button associated with the current hash
         buttonDict[currentHash].classList.add('is-active')
+
+        
         
         // This function will change the main content of the screen when the hash location changes
         window.onhashchange = (event) => {
@@ -126,12 +222,15 @@
 
             console.log(contentDict[currentHash]);
 
+            console.log(displayDict[currentHash])
             // Turn on display for new hash content
-            contentDict[currentHash].style.display = 'block';
+            contentDict[currentHash].style.display = displayDict[currentHash];
             
             // Add border around active button
             buttonDict[currentHash].classList.add('is-active')
+
         }
+        
 
         menu_toggle.addEventListener('click', () => {
             menu_toggle.classList.toggle('is-active');

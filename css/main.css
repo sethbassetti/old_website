@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Noto Serif JP', serif;
 }
 
 .app {
@@ -11,6 +10,8 @@
 }
 
 .sidebar {
+  font-family: 'Noto Serif JP', serif;
+  text-align: center;
   display: flex;
   flex-direction: column;
   flex: 1 1 0;
@@ -39,7 +40,7 @@
   text-align: center;
   color: black;
   font-size: 2rem;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.0;
 }
 
 .sidebar .menu {
@@ -68,6 +69,7 @@
 }
 
 .home-pg {
+  font-family: 'Noto Serif JP', serif;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.0)), url(../imgs/ice_climbing_shot.jpg);
   background-size: cover;
   background-position: center center;
@@ -167,12 +169,14 @@
 
 .social-links {
   margin-top: auto;
+  margin-bottom: 1rem;
   display: flex;
   justify-content: center;
   flex-direction:row;
 }
 
 .social-button {
+  border-radius: 0.25rem;
   margin-right: 5px;
   margin-left: 5px;
   padding: 0.25rem 0.25rem 0.25rem 0.25rem;
@@ -181,13 +185,15 @@
 }
 
 .social-button:hover {
-  background-color: orange;
+  background-color: #6d96a1;
 }
 
 .about-page{
-  background-color: #E98372;
-  flex: 1 1 0;
-  transform: translateX(100%);
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
 }
 
 .about-page h1{
@@ -202,10 +208,180 @@
   text-align: center;
 }
 
-.move-left {
-  transform: translateX(-100%);
+.location {
+  font-size: 0.75rem;
 }
 
-.copyright {
-  margin-top: auto;
+.about-text {
+  margin-right: 20rem;
+}
+
+.about-img img{
+  display: block;
+  width: 400px;
+}
+
+.contact-pg {
+  font-family: 'Poppins', sans-serif;
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  box-sizing: border-box;
+  position: relative;
+  min-height: 100vh;
+  padding: 50px 100px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-size: cover;
+
+}
+
+.contact-content {
+  max-width: 800px;
+  text-align: center;
+}
+
+.contact-content h1 {
+  font-size: 36px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.contact-content p {
+  font-weight: 300;
+  color: #fff;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.contactInfo {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-box {
+  position: relative;
+  padding: 20px 0;
+  display: flex;
+
+}
+
+.contact-icon {
+  min-width: 60px;
+  height: 60px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 22px;
+}
+
+.contact-text {
+  display: flex;
+  margin-left: 20px;
+  font-size: 16px;
+  color: #fff;
+  flex-direction: column;
+  font-weight: 300;
+
+}
+
+.contact-text h3 {
+  font-weight: 500;
+  color: #00bcd4;
+}
+
+.contactForm {
+  width: 40%;
+  padding: 40px;
+  background: #fff;
+}
+
+.contactForm h1 {
+  font-size: 30px;
+  color: #333;
+  font-weight: 500;
+}
+
+.contactForm .inputBox {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.contactForm .inputBox input,
+.contactForm .inputBox textarea
+{
+  width: 100%;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 2px solid #333;
+  outline: none;
+  resize: none;
+}
+
+.contactForm .inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  pointer-events: none;
+  transition: 0.5s;
+  color: #666;
+}
+
+.contactForm .inputBox input:focus ~ span,
+.contactForm .inputBox input:valid ~ span,
+.contactForm .inputBox textarea:focus ~ span,
+.contactForm .inputBox textarea:valid ~ span 
+{
+  color: #e91e63;
+  font-size: 12px;
+  transform: translateY(-20px);
+}
+
+.contactForm .inputBox input[type="submit"]
+{
+  width: 100px;
+  background-color: #00bcd4;
+  color:#fff;
+  border:none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+}
+
+@media (max-width: 991px)
+{
+  .contact-pg
+  {
+    padding: 50px;
+  }
+
+  .container
+  {
+    flex-direction: column;
+  }
+
+  .container .contactInfo
+  {
+    margin-bottom: 40px;
+  }
+
+  .container .contactInfo,
+  .container .contactForm
+  {
+    width: 100%;
+  }
 }
