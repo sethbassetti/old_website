@@ -191,8 +191,7 @@
   display: flex;
   flex-direction: row;
   height: 100vh;
-  background-color: #0093E9;
-  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  background-color: #466995;
 }
 
 .about-page h1{
@@ -212,12 +211,40 @@
 }
 
 .about-text {
-  margin-right: 20rem;
+  margin-right: 10rem;
+  font-size: 18px;
+  font-family: "Rubik", sans-serif;
+
 }
 
+.btn-default {
+  margin-top: 3rem;
+  color: #FFF !important;
+  background: #FF4C60;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgb(0 0 0 / 0%);
+}
+
+.btn {
+  border-radius: 30px;
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  overflow: hidden;
+  line-height: 1;
+  padding: 12px 32px;
+  position: relative;
+}
+
+
+
 .about-img img{
-  display: block;
   width: 400px;
+  border-radius: 50%;
+  margin-right: 3rem;
 }
 
 .contact-pg {
@@ -407,3 +434,4 @@ a { color: inherit; }
 .linkedin-link {
   border-bottom: 1px solid white;
 }
+
